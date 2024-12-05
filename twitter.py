@@ -108,7 +108,7 @@ def extract_and_group_links(input_file, output_file):
         # Find all links
         links = re.findall(r'(https?://[^\s]+)', content)
         for link in links:
-            if re.match(r'http[s]?://(t\.me|T\.me)/', link):  # Match case-insensitive T.me links
+            if re.match(r'http[s]?://(t\.me|T\.me)/', link):
                 if link not in existing_links["telegram"]:
                     telegram_links.append({"link": link, "content": content.strip()})
                     existing_links["telegram"].add(link)
